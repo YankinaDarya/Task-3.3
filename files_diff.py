@@ -39,10 +39,10 @@ def getDiffString(matrix, n, m, firstString, secondString):
         prevStepReplace = matrix[i - 1][j - 1] + 1
         prevStep = min(prevStepInsert, prevStepDelete, prevStepReplace)
 
-        # предыдущее действие было заменой или не изменилось
+        # если предыдущее действие было заменой, берем соотв.символ второй строки
         if ((currentValue == prevStepReplace or currentValue < prevStepReplace) and prevStepReplace == prevStep):
 
-            # проверяем, старый ли это символ или замена на новый, если старый, обозначаем его _ , если новый, заключаем в *:
+            # проверяем, старый ли это символ или замена на новый, если старый, обозначаем его _, если новый, заключаем в *:
             if(currentValue == prevStepReplace - 1):
                 diffString.insert(0, '_')
             else:
@@ -91,8 +91,6 @@ firstString = firstFile.read()
 secondString = secondFile.read()
 
 diffString, diff = levenstein(firstString, secondString)
-
-print(diff)
 
 diffFile = open("diffFile.txt", "w+")
 diffFile.write(''.join(diffString[:-1]))
