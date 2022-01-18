@@ -47,9 +47,7 @@ while i < newLen:
         j += 1
         i += 1
         continue    
-
-diffFile = open("/home/darya/python-progs/diffFile.txt", "w+")        
-        
+       
 oldFile = open(path, 'w')
 oldFile.write(str(updatedData))
 oldFile.close()
