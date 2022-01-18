@@ -92,9 +92,8 @@ secondString = secondFile.read()
 
 diffString, diff = levenstein(firstString, secondString)
 
+print(diff)
+
 diffFile = open("diffFile.txt", "w+")
-diffFile.write("Разница в символах между версиями: ")
-diffFile.write(str(diff))
-diffFile.write('\n')
 diffFile.write(''.join(diffString[:-1]))
 diffFile.close() 
