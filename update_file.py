@@ -49,5 +49,5 @@ while i < newLen:
         continue    
        
 oldFile = open(path, 'w')
-oldFile.write(str(updatedData))
+oldFile.write(''.join(updatedData))
 oldFile.close()
